@@ -3,15 +3,18 @@ import { toast } from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext/AuthProvider';
 import SecretHook from '../../SecretHook/SecretHook';
+import SeppenerPage from '../SeppenerPage/SeppenerPage';
 
 const Regester = () => {
 
     SecretHook('Regester')
-    const { haddlarCreateUser,UserProfile} = useContext(AuthContext)
+    const { haddlarCreateUser,UserProfile, loading} = useContext(AuthContext)
        
-    const navigate = useNavigate();
+const navigate = useNavigate();
 const location = useLocation();
 const from = location.state?.from?.pathname || "/";
+
+// handleSignUp Use 
 
  const handleSignUp = (event)=>{
  
@@ -22,10 +25,10 @@ const from = location.state?.from?.pathname || "/";
     const email = form.email.value;
     const password = form.password.value;
 
-    //  console.log(email,password, name, PhotoURL)
 
      
-  
+  // haddlarCreateUser Regester Mothed Use 
+
      haddlarCreateUser(email,password)  
      .then(result =>{
          const user = result.user;
@@ -39,6 +42,8 @@ const from = location.state?.from?.pathname || "/";
 
    }
 
+    // handlarProfileUpdate  name, and Picture Use 
+
    const handlarProfileUpdate =(name,PhotoURL) =>{
 
     const profile = {
@@ -50,6 +55,11 @@ const from = location.state?.from?.pathname || "/";
     return UserProfile (profile)
 }
 
+
+   if(loading){
+      
+      return <div> <SeppenerPage></SeppenerPage> </div>
+   }
 
    return (
       
