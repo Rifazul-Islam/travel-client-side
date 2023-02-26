@@ -2,9 +2,11 @@ import React, { useContext } from 'react';
 import { toast } from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext/AuthProvider';
+import SecretHook from '../../SecretHook/SecretHook';
 
 const Regester = () => {
 
+    SecretHook('Regester')
     const { haddlarCreateUser,UserProfile} = useContext(AuthContext)
        
     const navigate = useNavigate();
@@ -54,7 +56,7 @@ const from = location.state?.from?.pathname || "/";
     <div className="hero w-full my-7">
     <div className="hero-content grid gap-20 md:grid-cols-2 flex-col lg:flex-row">
         <div className="text-center lg:text-left">
-            <img className='w-3/4' src='https://cdni.iconscout.com/illustration/premium/thumb/user-account-sign-up-4489360-3723267.png' alt="" />
+         <img className='w-3/4' src='https://cdni.iconscout.com/illustration/premium/thumb/user-account-sign-up-4489360-3723267.png' alt="" />
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 py-7">
             <h1 className="text-2xl text-center font-bold">Sign Up</h1>
@@ -69,10 +71,10 @@ const from = location.state?.from?.pathname || "/";
 
 
                 <div className="form-control">
-                    <label className="label">
+                       <label className="label">
                         <span className="label-text"> your Name</span>
-                    </label>
-                    <input type="PhotoURL" name="PhotoURL" placeholder="Your Photo URL" className="input input-bordered" />
+                       </label>
+                      <input type="PhotoURL" name="PhotoURL" placeholder="Your Photo URL" className="input input-bordered" />
                  </div>
 
 
@@ -82,6 +84,7 @@ const from = location.state?.from?.pathname || "/";
                     </label>
                     <input type="text" name='email' placeholder="email" className="input input-bordered" required/>
                 </div>
+
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Password</span>

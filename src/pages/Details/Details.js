@@ -3,16 +3,17 @@ import { toast } from 'react-hot-toast';
 import {  ImUser } from "react-icons/im";
 import { useLoaderData } from 'react-router-dom';
 import  { AuthContext } from '../../contexts/AuthContext/AuthProvider';
+import SecretHook from '../../SecretHook/SecretHook';
 import Comments from './Comments';
 
 const Details = () => {
     
+  SecretHook('Details')
     const catagories = useLoaderData([])
     
    const {_id, img, name, descripe,price} = catagories
 
     const {user} = useContext(AuthContext)
-
 
     const handlarSumited = event =>{
 
@@ -57,10 +58,6 @@ const Details = () => {
           }
         })
 
-
-      
-
-
      }
 
 
@@ -86,38 +83,30 @@ const Details = () => {
      
     </div>
   </div>
-               
-                
 
 </div>
 
 
-                <div className='mt-16'>
+             <div className='mt-16'>
                       <h1 className='text-2xl text-center'> Add Review</h1>
 
                       <form onSubmit={handlarSumited}>
                              <p className='mx-auto text-center'>
-                
+      
                              <textarea className="textarea input-bordered my-5 w-4/5  py-2 mb-2 ps-2 input  input-info" type="text" name="message" placeholder="Bio"  />
                    
                              </p>
 
-                         
                             <div style={{marginLeft: '150px',  marginTop:'5px'}} className="form-control mt-4 w-24 ">
                              
                             {
                                   user?.email?  <input className="btn btn-primary" type="submit" value="Submit" />
-
-                                  :  <>
-
-                                <input className="btn btn-primary" value="Submit" />
-                       
-                                     </>     
+                               :<>
+                                   <input className="btn btn-primary" value="Submit" />
+                                 </>     
                               } 
 
-
                          </div>
-   
               </form>
 
 
@@ -140,8 +129,7 @@ const Details = () => {
                 </div>
              </div>
                                  
-
-                                
+       
                        </>
 
                         : <ImUser className='text-2xl'></ImUser>

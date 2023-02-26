@@ -3,9 +3,10 @@ import { toast } from 'react-hot-toast';
 import { FaGoogle } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext/AuthProvider';
+import SecretHook from '../../SecretHook/SecretHook';
 
 const Login = () => {
-
+SecretHook('Login')
  const {handlarSogin, handlarGoogle } = useContext(AuthContext)
   const navigate = useNavigate();
   const location = useLocation();
@@ -17,6 +18,7 @@ const Login = () => {
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
+
     handlarSogin(email,password)
     .then(result =>{
       const user = result.user;
@@ -58,19 +60,19 @@ const Login = () => {
             <form onSubmit={handleLogin} className="card-body">
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Email</span>
+                     <span className="label-text">Email</span>
                     </label>
                     <input type="text" name='email' placeholder="email" className="input input-bordered" />
                 </div>
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Password</span>
+                     <span className="label-text">Password</span>
                     </label>
                     <input type="password" name='password' placeholder="password" className="input input-bordered" />
                     
                 </div>
                 <div className="form-control mt-6">
-                    <input className="btn btn-primary" type="submit" value="Login" />
+                <input className="btn btn-primary" type="submit" value="Login" />
                 </div>
             
             </form>
