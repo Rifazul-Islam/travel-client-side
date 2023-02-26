@@ -4,10 +4,11 @@ import { FaGoogle } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext/AuthProvider';
 import SecretHook from '../../SecretHook/SecretHook';
+import SeppenerPage from '../SeppenerPage/SeppenerPage';
 
 const Login = () => {
 SecretHook('Login')
- const {handlarSogin, handlarGoogle } = useContext(AuthContext)
+ const {handlarSogin, handlarGoogle, loading } = useContext(AuthContext)
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
@@ -18,6 +19,8 @@ SecretHook('Login')
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
+
+// handlarSogin Use 
 
     handlarSogin(email,password)
     .then(result =>{
@@ -31,6 +34,7 @@ SecretHook('Login')
   
   }
 
+// Google Login method use
 
   const googleLogin = ()=>{
 
@@ -48,6 +52,9 @@ SecretHook('Login')
   }
 
 
+    if(loading){
+      return <div> <SeppenerPage></SeppenerPage> </div>
+    }
   return (
     <div className="hero w-full my-7">
     <div className="hero-content grid gap-20 md:grid-cols-2 flex-col lg:flex-row">
