@@ -34,9 +34,35 @@ const from = location.state?.from?.pathname || "/";
          const user = result.user;
          console.log(user)
          handlarProfileUpdate(name,PhotoURL)
-         toast.success('your Sign Up Successfully')
-        
-         navigate(from, { replace: true });
+      
+         const presentUser = {
+
+            email: user.email
+        }
+
+      fetch('http://localhost:5000/jwt',{
+
+         method:'POST',
+         headers:{
+
+           'content-type': 'application/json'
+
+         },
+
+         body:JSON.stringify(presentUser)
+      })
+
+        .then(res => res.json())
+        .then(data => {
+
+                 
+          toast.success(' create Token from Regester page')
+
+             localStorage.setItem('token-best', data.token)
+             navigate(from, { replace: true });
+
+            
+        })
      })
      .catch(err => toast.error(`${err}`));
 

@@ -28,8 +28,37 @@ SecretHook('Login')
       console.log(user)
       navigate(from, { replace: true });
 
-      toast.success('your Sign In Successfully')
+      const presentUser = {
+
+        email: user.email
+    }
+
+  fetch('http://localhost:5000/jwt',{
+
+     method:'POST',
+     headers:{
+
+       'content-type': 'application/json'
+
+     },
+
+     body:JSON.stringify(presentUser)
   })
+
+    .then(res => res.json())
+    .then(data => {
+
+             toast.success('localStorage set token')
+        
+
+         localStorage.setItem('token-nest', data.token)
+
+         navigate( from , { replace : true });
+    })
+})
+
+
+  
   .catch(err => toast.error(`${err}`));
   
   }
@@ -43,6 +72,33 @@ SecretHook('Login')
         const user = result.user
         console.log(user)
         navigate(from, { replace: true });
+        const presentUser = {
+
+          email: user.email
+      }
+
+    fetch('http://localhost:5000/jwt',{
+
+       method:'POST',
+       headers:{
+
+         'content-type': 'application/json'
+
+       },
+
+       body:JSON.stringify(presentUser)
+    })
+
+      .then(res => res.json())
+      .then(data => {
+
+               toast.success('localStorage set token')
+          
+
+           localStorage.setItem('token-nest', data.token)
+
+          
+      })
     
     })
 
