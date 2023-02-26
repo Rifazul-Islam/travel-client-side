@@ -17,7 +17,7 @@ const TableReview = ({review,deletedReview}) => {
    },[service])
     return (
      
-            <tr>
+            <tr  >
             <td>
                 <button className='text-2xl' onClick={()=>deletedReview(_id)}> X </button>
             </td>

@@ -29,8 +29,8 @@ const ServiceCard = () => {
         </div>
 
         
-        <div className='mx-auto text-center mb-14'>
-        <Link to='/services'> <button className="btn btn-outline btn-info w-96">See All <BiRightArrowAlt className='text-2xl'/> </button></Link>
+        <div className='mx-auto text-center mb-10'>
+        <Link to='/services'> <button className="btn btn-outline btn-info w-96 mt-5">See All <BiRightArrowAlt className='text-2xl'/> </button></Link>
         </div>
    </div>
     );

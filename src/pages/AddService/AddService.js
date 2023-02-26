@@ -48,9 +48,9 @@ const AddService = () => {
 }
 
     return (
-<div>
-
-<div className=' mt-2  w-1/2 bottom-1 bg-blue-200 mx-auto text-center ' style={{height:'400px'}} >
+<div className=' mx-4 bg-gradient-to-r  from-emerald-200  to-indigo-200'>
+ 
+<div className=' mt-2   bottom-1  mx-auto text-center ' style={{height:'400px'}} >
 <h5 className='text-center text-2xl mb-3'> Add Service ...</h5>
 <form  onSubmit={handlarSummit} >
 

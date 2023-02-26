@@ -53,7 +53,7 @@ const Review = () => {
  }
     return (
 
-  <div className='mb-52 mx-4 mt-2' >
+  <div className='mb-96 text-blue-700 mx-4 mt-2 ' >
   <div className="overflow-x-auto w-full">
   <table className="table w-full">
     {/* head */}
@@ -68,7 +68,7 @@ const Review = () => {
      <th>Email Name</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody >
               
               {
                  reviews.map( review => <TableReview
