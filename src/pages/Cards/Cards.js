@@ -6,7 +6,7 @@ const Cards = ({service}) => {
     return (
     <div className='my-4 '>
     <div className="card bg-blue-200 shadow-xl  h-[500px]">
-  <figure><img src={img} className=" w-[500px] "  alt="Shoes" /></figure>
+  <figure><img src={img} className=" w-[500px] h-[250px]"  alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="card-title"> {name} </h2>
     <p> {descripe?.length>100? descripe.slice(0,100)+ '..': descripe} </p>

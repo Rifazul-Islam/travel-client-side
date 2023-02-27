@@ -66,6 +66,7 @@ const Review = () => {
     <th>Review </th>
     <th> UserName </th>
      <th>Email Name</th>
+     <th>Edid System</th>
       </tr>
     </thead>
     <tbody >

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const TableReview = ({review,deletedReview}) => {
 
@@ -53,6 +54,9 @@ const TableReview = ({review,deletedReview}) => {
           <td className='text-2xl'> {name}</td>
        
         <td className='text-2xl'> {email}</td>
+        <td>  
+           <button className="btn btn-sm"> <Link to={`/reviews/${_id}`}> Edid</Link> </button>
+           </td>
       </tr> 
 
       

@@ -71,8 +71,7 @@ const Details = () => {
        },[user?.email])
 
     return (
-  <div className='mb-14'>
-
+<div className='mb-14'>
 <div className=" mx-4 mt-2  bg-blue-300 mb-5">
   <div className="hero-content flex-col lg:flex-row">
     <img src={img}  className=" w-[700px] h-[250px] max-w-sm rounded-lg shadow-2xl " alt='#' />

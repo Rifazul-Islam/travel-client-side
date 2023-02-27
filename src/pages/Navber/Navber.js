@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import img from '../../imgess/travelImg.png'
 
 import { AuthContext } from '../../contexts/AuthContext/AuthProvider';
 
@@ -27,7 +28,7 @@ const Navber = () => {
         </>
     return (
         <div className=' mx-4 mt-2 '>
-        <div className="navbar bg-blue-200">
+        <div className="navbar bg-blue-100">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -38,7 +39,7 @@ const Navber = () => {
                    {itemsMenu}
             </ul>
           </div>
-          <Link className="btn btn-ghost normal-case text-xl"><p className=' ml-32' >Travel </p></Link>
+          <Link className="btn btn-ghost normal-case text-xl"><p className=' ml-32' > <img className='w-12' src={img} alt='#'></img> </p></Link>
         </div>
         <div className=" ml-96 text-1xl navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">

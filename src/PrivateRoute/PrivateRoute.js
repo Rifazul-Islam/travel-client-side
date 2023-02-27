@@ -10,7 +10,7 @@ const PrivateRoute = ({children}) => {
 
       if(loading){
 
-        return <div className='d-flex justify-content-center mt-5 ' > Loading ...</div>
+        return <div className='d-flex justify-content-center mt-5 mx-auto text-center' > Loading ...</div>
     }
         
       if(user?.email){
