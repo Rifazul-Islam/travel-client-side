@@ -36,7 +36,7 @@ const Details = () => {
 
             
 
-           fetch('http://localhost:5000/reviews',{
+           fetch('https://travel-server-side.vercel.app/reviews',{
 
             method:'POST',
 
@@ -64,7 +64,7 @@ const Details = () => {
        const [users, setUsers] = useState([])
           console.log(users)
        useEffect(()=>{
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`)
+        fetch(`https://travel-server-side.vercel.app/reviews?email=${user?.email}`)
         .then(res => res.json())
         .then(data => setUsers(data))
 
@@ -135,7 +135,8 @@ const Details = () => {
                                      
                        }   
              </span>
-                                
+
+
          </div>
 
 
@@ -146,6 +147,7 @@ const Details = () => {
                <div className='mt-14 ml-16 border-2 w-96  ' >
                    
                         <h1 className='text-blue-400 ml-4'> your Review Show </h1>
+                     
                             
                       {
                         users.map(user => <Comments
@@ -157,8 +159,11 @@ const Details = () => {
 
                         </Comments>)
                       }  
+
+                 
             </div> 
 
+              
         </div>
     );
 };

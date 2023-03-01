@@ -13,7 +13,7 @@ const AddService = () => {
         console.log(service)
         event.target.reset()
 
-        fetch('http://localhost:5000/services',{
+        fetch('https://travel-server-side.vercel.app/services',{
          
           method:'POST',
           headers:{
@@ -56,8 +56,8 @@ const AddService = () => {
 
 <input onBlur={handlarBlur}  type="text" name='name' placeholder='Service name' className="input input-bordered w-full max-w-xs" /><br/><br/>
 <input onBlur={handlarBlur}   type="text" name='img'  placeholder='Service photo url' className="input input-bordered w-full max-w-xs" /><br/><br/>
-<input  onBlur={handlarBlur}  type="text" name='discripe'  placeholder='Service discripetion' className="input input-bordered w-full max-w-xs" /><br/><br/>
-<input onBlur={handlarBlur}  type="text" name='Price'  placeholder='Service price' className="input input-bordered w-full max-w-xs" /><br/><br/>
+<input  onBlur={handlarBlur}  type="text" name='descripe'  placeholder='Service discripetion' className="input input-bordered w-full max-w-xs" /><br/><br/>
+<input onBlur={handlarBlur}  type="text" name='price'  placeholder='Service price' className="input input-bordered w-full max-w-xs" /><br/><br/>
 <input type="submit" value="Submit" className="btn btn-primary input input-bordered w-full max-w-xs" />
 </form>
 </div>

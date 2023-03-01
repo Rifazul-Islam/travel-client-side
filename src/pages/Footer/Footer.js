@@ -1,5 +1,5 @@
 import React from 'react';
- import img from '../../imgess/travelImg.png'
+ import img from '../../imgess/travels.png'
 const Footer = () => {
     return (
         <div className='mx-4 mt-2'>
@@ -10,7 +10,7 @@ const Footer = () => {
   </div> 
   <div>
     <span className="footer-title ">Services</span> 
-    <a >Branding</a> 
+    <a>Branding</a> 
     <a >Design</a> 
     <a >Marketing</a> 
     <a>Advertisement</a>

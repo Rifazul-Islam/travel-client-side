@@ -19,7 +19,7 @@ const Reviews = () => {
         const photoURL = user?.photoURL || 'unUser';
           const  reviews = {
                    
-                service,
+                 service,
                   message,
                   email,
                   name ,
@@ -29,7 +29,7 @@ const Reviews = () => {
   
               
   
-             fetch('http://localhost:5000/reviews',{
+             fetch('https://travel-server-side.vercel.app/reviews',{
   
               method:'POST',
   
@@ -46,7 +46,7 @@ const Reviews = () => {
           
             if(data.acknowledged){
                 
-                toast.success( 'your update send data database',  data)
+                toast.success('your update send data database',  data)
                   form.reset()
             }
           })
@@ -55,23 +55,20 @@ const Reviews = () => {
   
 
     return (
-        <div className='mx-auto text-center mb-96'>
+        <div className='mx-auto text-center mb-96 bg-indigo-200 ml-4 mr-4 mt-2'>
                <h1> Name : {name} </h1>
                <form onSubmit={handlarSumited}>
-                             <p className='mx-auto text-center'>
+                        <p className='mx-auto text-center'>
       
-                             <textarea className="textarea input-bordered my-5 w-4/5  py-2 mb-2 ps-2 input  input-info" defaultValue={message} type="text" name="message" placeholder="Bio"  />  
+                             <input className="textarea input-bordered my-5 w-4/5  py-2 mb-2 ps-2 input  input-info"  type="text" name="message" defaultValue={message} placeholder="Bio"  />  
                    
                              </p>
 
                             <div style={{marginLeft: '150px',  marginTop:'5px'}} className="form-control mt-4 w-24 ">
                              
-                            {
-                                  user?.email?  <input className="btn btn-primary" type="submit" value="Su" />
-                               :<>
-                                   <input className="btn btn-primary" value="Update" />
-                                 </>     
-                              } 
+                            <div className="form-control mt-6">
+                           <input className="btn btn-primary" type="submit" value="Submit" />
+                           </div>
 
                          </div>
               </form>

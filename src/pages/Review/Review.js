@@ -13,7 +13,7 @@ const Review = () => {
     
     useEffect( ()=>{
        
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`)
+        fetch(`https://travel-server-side.vercel.app/reviews?email=${user?.email}`)
 
         .then(res => res.json()) 
         .then(data =>setReviews(data) )
@@ -26,7 +26,7 @@ const Review = () => {
           
      if(sure){
 
-           fetch(`http://localhost:5000/reviews/${id}`, {
+           fetch(`https://travel-server-side.vercel.app/reviews/${id}`, {
 
             method:'DELETE',
 
@@ -54,8 +54,8 @@ const Review = () => {
     return (
 
   <div className='mb-96 text-blue-700 mx-4 mt-2 ' >
-  <div className="overflow-x-auto w-full">
-  <table className="table w-full">
+  <div className="overflow-x-auto">
+  <table className="table  w-full">
     {/* head */}
     <thead>
       <tr>
@@ -66,10 +66,10 @@ const Review = () => {
     <th>Review </th>
     <th> UserName </th>
      <th>Email Name</th>
-     <th>Edid System</th>
+     <th>Edit System</th>
       </tr>
     </thead>
-    <tbody >
+    <tbody>
               
               {
                  reviews.map( review => <TableReview

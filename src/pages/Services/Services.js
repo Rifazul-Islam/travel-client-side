@@ -9,7 +9,7 @@ const Services = () => {
    SecretHook('Service')
 
        useEffect(()=>{
-        fetch('http://localhost:5000/services')
+        fetch('https://travel-server-side.vercel.app/services')
         .then(res => res.json())
         .then(data => {
             setTravel(data)
@@ -24,6 +24,7 @@ const Services = () => {
 
     return (
         <div>
+         <h1 className='text-3xl text-indigo-400 text-center mt-7 mb-4 font-bold'>  Our All Service </h1>
          <div className='grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
         { travels.map(travel => <ServicesCards
          

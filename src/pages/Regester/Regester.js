@@ -40,7 +40,7 @@ const from = location.state?.from?.pathname || "/";
             email: user.email
         }
 
-      fetch('http://localhost:5000/jwt',{
+      fetch('https://travel-server-side.vercel.app/jwt',{
 
          method:'POST',
          headers:{

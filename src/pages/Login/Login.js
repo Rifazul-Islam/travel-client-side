@@ -33,7 +33,7 @@ SecretHook('Login')
         email: user.email
     }
 
-  fetch('http://localhost:5000/jwt',{
+  fetch('https://travel-server-side.vercel.app/jwt',{
 
      method:'POST',
      headers:{
@@ -77,7 +77,7 @@ SecretHook('Login')
           email: user.email
       }
 
-    fetch('http://localhost:5000/jwt',{
+    fetch('https://travel-server-side.vercel.app/jwt',{
 
        method:'POST',
        headers:{
@@ -112,7 +112,7 @@ SecretHook('Login')
       return <div> <SeppenerPage></SeppenerPage> </div>
     }
   return (
-    <div className="hero w-full my-7">
+    <div className="hero w-full my-7 ">
     <div className="hero-content grid gap-20 md:grid-cols-2 flex-col lg:flex-row">
         <div className="text-center lg:text-left"> 
           <img className='w-3/4 h-64' 

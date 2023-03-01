@@ -17,14 +17,14 @@ export const router = createBrowserRouter([
       {path:'/', element:<Home></Home>}, 
       {path:'/services', element:<Services></Services>},
       {path:'/detailService/:id', element:<Details></Details>,
-       loader:({params}) => fetch(`http://localhost:5000/services/${params.id}`)
+       loader:({params}) => fetch(`https://travel-server-side.vercel.app/services/${params.id}`)
     },
 
     {path:'/register', element: <Regester></Regester>},
     {path:'/login', element: <Login></Login>},
     {path:'/blog', element: <Blog></Blog> },
     {path:'/reviews/:id',element:<Reviews></Reviews>,
-    loader:({params}) => fetch(`http://localhost:5000/reviews/${params.id}`)
+    loader:({params}) => fetch(`https://travel-server-side.vercel.app/reviews/${params.id}`)
   },
     {path:'/review', element: <PrivateRoute><Review></Review></PrivateRoute> },
     {path:'/addService', element: <PrivateRoute><AddService></AddService></PrivateRoute>}

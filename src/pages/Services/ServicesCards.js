@@ -2,6 +2,7 @@ import React from 'react';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 import { Link } from 'react-router-dom';
+import { HiStar } from "react-icons/hi2";
 const ServicesCards = ({travel}) => {
     const {_id,name, img, price, descripe} = travel
     return (
@@ -12,7 +13,7 @@ const ServicesCards = ({travel}) => {
    
    <PhotoProvider>
     <PhotoView src={img}>
-    <figure><img src={img} className=" w-[500px] h-[250px] "  alt="Shoes" /></figure>
+    <figure><img src={img} className=" w-[500px] h-60 "  alt="Shoes" /></figure>
     </PhotoView>
    </PhotoProvider>
 
@@ -23,7 +24,10 @@ const ServicesCards = ({travel}) => {
     <p> {descripe?.length>100? descripe.slice(0,100)+ '..': descripe} </p>
     <p className='text-2xl'> <b>Price</b> : ${price} </p>
     <div className="card-actions justify-start">
-      <button className="btn btn-primary"> <Link to={`/detailService/${_id}`}> Details</Link> </button>
+    <Link to={`/detailService/${_id}`}> <span> <button className="btn btn-primary">  Details </button> </span>  </Link>  <span> <HiStar className='ml-12  mt-2 text-3xl text-red-700'> </HiStar></span> 
+    <span> <HiStar className='ml-1 mt-2 text-3xl text-red-700'> </HiStar> </span>
+     <span> <HiStar className='ml-1 mt-2 text-3xl text-red-700'></HiStar> </span>
+     <span> <HiStar className='ml-1 mt-2 text-3xl text-red-700'> </HiStar></span> 
   
    
     </div>
